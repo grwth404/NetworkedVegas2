@@ -12,7 +12,7 @@ internal sealed class NetworkedVegas2Command : AsyncCommand<NetworkedVegas2Comma
     public sealed class Settings : CommandSettings
     {
         [Description("IP address of server to proxy to.")]
-        [CommandArgument(0, "ipAddress")]
+        [CommandArgument(0, "<ipAddress>")]
         public string? IPAddress { get; init; }
 
         [Description("Port to proxy. Defaults to 45000.")]
@@ -34,13 +34,14 @@ internal sealed class NetworkedVegas2Command : AsyncCommand<NetworkedVegas2Comma
         var cts = new CancellationTokenSource();
         Console.CancelKeyPress += (sender, args) =>
         {
+            AnsiConsole.MarkupLine("Shutting down...");
             cts.Cancel();
         };
 
         try
         {
             var buffer = new byte[512];
-            while (cts.IsCancellationRequested)
+            while (!cts.IsCancellationRequested)
             {
 
                 AnsiConsole.MarkupLine($"[grey]Waiting for client to search for games...[/]");
