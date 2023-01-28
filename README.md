@@ -8,6 +8,26 @@ A command line application to help connect Rainbow Six Vegas 2 across the intern
 2. Open your preferred terminal and run the application, specifying the IP address of the game server.
 3. In the game itself, navigate to LAN where it will search for servers. Your game server should now appear.
 
+## Usage
+
+```
+NetworkedVegas2.exe <ipAddress> [OPTIONS]
+```
+
+### Arguments
+
+`<ipAddress>`<br/>
+IP address of the server to proxy to.
+
+### Options
+
+`-p, --port`<br/>
+Port to proxy. Defaults to 45000.
+
+`-h, --help`<br/>
+Prints help information.
+
+
 ## Frequently Asked Questions
 
 ### Why would I need this?
