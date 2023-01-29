@@ -50,10 +50,17 @@ The server's response for that request is then forwarded back to the client.
 This is where Networked Vegas 2 ends and the game's net code takes full control.
 Effectively, all we are doing is tricking the game to make it think the server is local when it isn't.
 
+I dive into a lot more detail about how this came about [in my blog post](https://turnerj.com/blog/proxying-rainbow-six-lan-for-wan-with-dotnet).
+
 ### Does this work for other games?
 
 Maybe for other Unreal Engine 3 games? It depends a lot on the networking system for that specific game.
 I have only tested Rainbow Six Vegas 2 and don't really have any intention of supporting other games.
+
+### Do I need .NET 6 installed to use this?
+
+Nope! It is a self-contained executable - it contains everything it needs to run.
+It is also why the file size of `NetworkedVegas2.exe` is as large as it is.
 
 ### It doesn't work!
 
