@@ -43,7 +43,6 @@ internal sealed class NetworkedVegas2Command : AsyncCommand<NetworkedVegas2Comma
             var buffer = new byte[512];
             while (!cts.IsCancellationRequested)
             {
-
                 AnsiConsole.MarkupLine($"[grey]Waiting for client to search for games...[/]");
                 var broadcastIntercept = await clientIntercept.ReceiveFromAsync(buffer, SocketFlags.None, interceptAddress, cts.Token);
                 AnsiConsole.MarkupLine($"[green]Received client game search request![/]");
